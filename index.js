@@ -21,22 +21,30 @@ app.post('/', async (req, res) => {
 
   const { message } = req.body.userMessage;
 
-  const completion = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
-    messages: [{role: "user", content: message}],
-  });
+  try {
+    const completion = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [{role: "user", content: message}],
+    });
 
-  const answer = completion.data.choices[0].message.content || '';
+    const answer = completion.data.choices[0].message.content || '';
 
-  if(!answer) {
+    if(!answer) {
+      return res.status(400).send({
+        error: 'invalid answer from openai'
+     });
+    }
+    
+    res.send({
+      botMessage: answer
+    });
+
+  } catch (e) {
+    console.error(e.message)
     return res.status(400).send({
-      error: 'invalid answer from openai'
+      error: 'check env and request data'
    });
   }
-  
-  res.send({
-    botMessage: answer
-  });
 });
  
 app.listen(PORT, () => {
