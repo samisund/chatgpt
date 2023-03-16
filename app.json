@@ -1,0 +1,7 @@
+{
+  "name": "Chat GPT for HubSpot chatbot",
+  "description": "This is simple demo how to add Chat GPT to HubSpot Bot webhook.",
+  "repository": "https://github.com/samisund/chatgpt",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "hubspot"]
+}
