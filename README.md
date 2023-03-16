@@ -1,6 +1,7 @@
 # Demo for HubSpot Chat bot with Chat GPT
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/samisund/chatgpt/tree/main
+)
 
 Instructions:
 1. Run: `npm install`
