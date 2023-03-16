@@ -13,7 +13,7 @@ app.use(express.json());
   
 app.post('/', async (req, res) => {
 
-  if(!req.body || !req.body.userMessage) {
+  if(!req.body || !req.body.userMessage || !req.body.userMessage.message) {
     return res.status(400).send({
       error: 'invalid request'
    });
